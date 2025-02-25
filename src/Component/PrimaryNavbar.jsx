@@ -27,7 +27,7 @@ function PrimaryNavbar() {
         </div>
 
         {/* nav-icon */}
-        <div className='flex gap-2'>
+        <div className='flex gap-2 '>
           {/*  */}
           <div>
            <CiHeart/>
