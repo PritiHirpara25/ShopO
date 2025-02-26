@@ -5,6 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { GoPerson } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Sidebar from "./Sidebar";
+import { NavLink } from "react-router-dom";
 
 function PrimaryNavbar({ sidebar, setSidebar }) {
   return (
@@ -54,7 +55,7 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
           {/* bag */}
           <div>
             <div className="relative">
-              <IoBagOutline className="size-5 mt-1" />
+             <NavLink to={'/cart'}><IoBagOutline className="size-5 mt-1" /></NavLink> 
               <div className="size-5 rounded-full flex justify-center items-center font-semibold bg-[#ffbb38] absolute bottom-3 left-2">
                 <span className="font-light">{0}</span>
               </div>

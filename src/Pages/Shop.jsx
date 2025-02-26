@@ -3,9 +3,6 @@ import GameRemote from '../assets/GameRemote.jpg';
 import HeadPhone from '../assets/HeadPhone.jpg';
 import Cards from '../Helper/Cards'
 import ShopSidebar from '../Component/ShopSidebar'
-import { HiOutlineShoppingBag } from 'react-icons/hi2'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProductDeatils from './ProductDeatils'
 
 const Shop = () => {
 
@@ -28,7 +25,6 @@ const Shop = () => {
   ]
 
   return (
-    <Router>
       <div className='container flex mt-10'>
 
         <div>
@@ -47,11 +43,7 @@ const Shop = () => {
           )
           }
         </div>
-        <Routes>
-          <Route path="/product/:id" element={<ProductDeatils />} />
-        </Routes>
       </div>
-    </Router>
   )
 }
 
