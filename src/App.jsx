@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Cards from './Helper/Cards'
 import Shop from './Pages/Shop'
 import ProductDeatils from './Pages/ProductDeatils';
-
+import Cart from './Pages/Cart'
 import Sidebar from './Component/Sidebar'
 // import Cards from './Helper/Cards'
 import { useState } from 'react'
@@ -25,7 +25,9 @@ function App() {
       <div >
         <PrimaryNavbar sidebar={sidebar} setSidebar={setSidebar} />
         {/* <Sidebar /> */}
-        <Shop/>
+        {/* <Shop/> */}
+        <ProductDeatils/>
+        {/* <Cart/> */}
         {/* <Cards/> */}
       </div>
     </>
