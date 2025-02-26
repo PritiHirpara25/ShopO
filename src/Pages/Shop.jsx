@@ -35,7 +35,7 @@ const Shop = () => {
           <ShopSidebar />
         </div>
 
-        <div className='realtive grid grid-cols-3 gap-x-8 gap-y-8 mx-10'>
+        <div className='grid grid-cols-3 gap-x-8 gap-y-8 mx-10'>
           {card.map((item) => (
             <div>
               <Cards key={item.id} product={item} />

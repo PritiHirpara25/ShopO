@@ -16,12 +16,12 @@ const Cards = ({ product }) => {
     }
 
     return (
-        <div className='relative border-2 max-w-80 p-7 shadow-xl group'>
+        <div className='relative border-2 border-red-500 max-w-80 p-7 shadow-xl group'>
 
-            <div className='absoulte left-0 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-5'>
-                <CiHeart className='m-2 bg-gray-200 text-3xl p-1'/>
-                <LuRefreshCcw className='m-2 bg-gray-200 text-3xl p-1'/>
-                <AiOutlineFullscreen className='m-2 bg-gray-200 text-3xl p-1'/>
+            <div className='absolute top-12 right-8 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-5 group-hover:translate-x-0'>
+                <CiHeart className='m-2 bg-gray-200 text-3xl p-1' />
+                <LuRefreshCcw className='m-2 bg-gray-200 text-3xl p-1' />
+                <AiOutlineFullscreen className='m-2 bg-gray-200 text-3xl p-1' />
             </div>
             <div className='flex justify-center'>
                 <img src={product.image} className='p-5 size-48' alt="" />
