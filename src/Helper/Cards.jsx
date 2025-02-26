@@ -28,11 +28,11 @@ const Cards = ({ product }) => {
             </div>
             <div>
                 <div className='flex mb-2'>
-                    <MdOutlineStarPurple500 className='text-yellow-400 text-xl' />
-                    <MdOutlineStarPurple500 className='text-yellow-400 text-xl' />
-                    <MdOutlineStarPurple500 className='text-yellow-400 text-xl' />
-                    <MdOutlineStarPurple500 className='text-yellow-400 text-xl' />
-                    <MdOutlineStarPurple500 className='text-yellow-400 text-xl' />
+                    <MdOutlineStarPurple500 className='text-[#ffbb38] text-xl' />
+                    <MdOutlineStarPurple500 className='text-[#ffbb38] text-xl' />
+                    <MdOutlineStarPurple500 className='text-[#ffbb38] text-xl' />
+                    <MdOutlineStarPurple500 className='text-[#ffbb38] text-xl' />
+                    <MdOutlineStarPurple500 className='text-[#ffbb38] text-xl' />
                 </div>
                 <div>
                     <p className='line-clamp-2 mb-2 hover:text-blue-600' onClick={handleTitleClick}>{product.title}</p>
@@ -45,7 +45,7 @@ const Cards = ({ product }) => {
 
             <div className="absolute bottom-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300  translate-y-5 group-hover:translate-y-0">
 
-                <button className="flex items-center gap-x-3 bg-yellow-400 px-20 py-2">
+                <button className="flex items-center gap-x-3 bg-[#ffbb38] px-20 py-2">
                     <HiOutlineShoppingBag /> Add To Cart
                 </button>
             </div>

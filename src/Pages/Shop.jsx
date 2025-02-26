@@ -1,8 +1,8 @@
-import React from "react";
-import GameRemote from "../assets/GameRemote.jpg";
-import HeadPhone from "../assets/HeadPhone.jpg";
-import Cards from "../Helper/Cards";
-import ShopSidebar from "../Component/ShopSidebar";
+import React from 'react'
+import GameRemote from '../assets/GameRemote.jpg';
+import HeadPhone from '../assets/HeadPhone.jpg';
+import Cards from '../Helper/Cards'
+import ShopSidebar from '../Component/ShopSidebar'
 
 const Shop = () => {
   const card = [
@@ -113,8 +113,9 @@ const Shop = () => {
     },
   ];
   return (
-      <div className="container flex mt-10">
-        
+  
+      <div className='container flex mt-10'>
+
         <div>
           <ShopSidebar />
         </div>
@@ -127,8 +128,8 @@ const Shop = () => {
           ))}
         </div>
       </div>
-   
-  );
-};
+  
+  )
+}
 
 export default Shop;
