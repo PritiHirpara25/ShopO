@@ -1,8 +1,14 @@
 import React from 'react'
+import Templates from '../Component/Templates'
+import Shipping from '../Component/Shipping'
 
 const Home = () => {
   return (
-    <div>Home</div>
+   <div className='bg-gray-100'>
+      <Templates />
+      <Shipping />
+   </div>
+  
   )
 }
 
