@@ -1,12 +1,30 @@
 import React from 'react'
 import GameRemote from '../assets/GameRemote.jpg'
 import { MdOutlineStarPurple500 } from "react-icons/md";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { CiHeart } from "react-icons/ci";
+import { LuRefreshCcw } from "react-icons/lu";
+import { AiOutlineFullscreen } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
-const Cards = ({product}) => {
+const Cards = ({ product }) => {
+
+    const navigate = useNavigate();
+
+    const handleTitleClick = () => {
+        navigate(`/product/${product.id}`);
+    }
+
     return (
-        <div className='border-2 max-w-80 p-7 shadow-xl'>
-            <div>
-                <img src={product.image} className='p-5' alt="" />
+        <div className='relative border-2 border-red-500 max-w-80 p-7 shadow-xl group'>
+
+            <div className='absolute top-12 right-8 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-5 group-hover:translate-x-0'>
+                <CiHeart className='m-2 bg-gray-200 text-3xl p-1' />
+                <LuRefreshCcw className='m-2 bg-gray-200 text-3xl p-1' />
+                <AiOutlineFullscreen className='m-2 bg-gray-200 text-3xl p-1' />
+            </div>
+            <div className='flex justify-center'>
+                <img src={product.image} className='p-5 size-48' alt="" />
             </div>
             <div>
                 <div className='flex mb-2'>
@@ -17,13 +35,19 @@ const Cards = ({product}) => {
                     <MdOutlineStarPurple500 className='text-yellow-400 text-xl' />
                 </div>
                 <div>
-                    <p className='line-clamp-2 mb-2 hover:text-blue-600'>{product.title}</p>
-                    {/* <p class="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">Xoggle aute et pariatur adipisicing nostrud et excepteur</p> */}
+                    <p className='line-clamp-2 mb-2 hover:text-blue-600' onClick={handleTitleClick}>{product.title}</p>
                     <div className='flex gap-x-2'>
                         <del className='text-xl text-gray-400'>{product.discount}</del>
                         <span className='text-xl text-red-600 font-bold'>{product.price}</span>
                     </div>
                 </div>
+            </div>
+
+            <div className="absolute bottom-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300  translate-y-5 group-hover:translate-y-0">
+
+                <button className="flex items-center gap-x-3 bg-yellow-400 px-20 py-2">
+                    <HiOutlineShoppingBag /> Add To Cart
+                </button>
             </div>
         </div>
     )

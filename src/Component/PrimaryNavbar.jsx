@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 function PrimaryNavbar({ sidebar, setSidebar }) {
   return (
-    <div className=" container relative border border-red-500">
+    <div className="container relative border border-red-500">
       {/* navbar */}
       <nav className="flex justify-between items-center">
         {/* hamburger menu */}
