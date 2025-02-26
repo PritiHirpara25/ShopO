@@ -6,6 +6,8 @@ import Shop from '../Pages/Shop'
 import Login from '../Pages/Login'
 import SignUp from '../Pages/SignUp'
 import Cart from '../Pages/Cart'
+import ProductDetails from '../Pages/ProductDeatils'
+import Checkout from '../Pages/Checkout';
 
 const Layout = ({children}) => {
   const router = createBrowserRouter([
@@ -22,6 +24,10 @@ const Layout = ({children}) => {
           element:<Shop/>
         },
         {
+          path:'/product/:id',
+          element:<ProductDetails/>
+        },
+        {
           path:'/login',
           element:<Login/>
         },
@@ -32,6 +38,10 @@ const Layout = ({children}) => {
         {
           path:'/cart',
           element:<Cart/>
+        },
+        {
+          path:'/checkout',
+          element:<Checkout/>
         }
       ]
     }
