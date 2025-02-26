@@ -1,9 +1,6 @@
 import "./App.css";
 import { useState } from "react";
 import Navbar from "./Component/Navbar";
-import './App.css'
-import { useState } from 'react'
-import Navbar from './Component/Navbar'
 
 function App() {
   const [sidebar, setSidebar] = useState(false);
