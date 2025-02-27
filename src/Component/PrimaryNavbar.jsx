@@ -6,10 +6,57 @@ import { GoPerson } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Sidebar from "./Sidebar";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import CartHoverProduct from "./CartHoverProduct";
+import game_remote from "../assets/GameRemote.jpg";
 
 function PrimaryNavbar({ sidebar, setSidebar }) {
+  const cartHoverProducts =[
+    {
+      id:1,
+      title:"iPhone 12 Pro Max 128 GB Golen Color",
+      price: "$38",
+      image: game_remote,
+    },
+    {
+      id:1,
+      title:"iPhone 12 Pro Max 128 GB Golen Color",
+      price: "$38",
+      image: game_remote,
+    },
+    {
+      id:1,
+      title:"iPhone 12 Pro Max 128 GB Golen Color",
+      price: "$38",
+      image: game_remote,
+    },
+    {
+      id:1,
+      title:"iPhone 12 Pro Max 128 GB Golen Color",
+      price: "$38",
+      image: game_remote,
+    },
+    {
+      id:1,
+      title:"iPhone 12 Pro Max 128 GB Golen Color",
+      price: "$38",
+      image: game_remote,
+    },
+    {
+      id:1,
+      title:"iPhone 12 Pro Max 128 GB Golen Color",
+      price: "$38",
+      image: game_remote,
+    },
+    {
+      id:1,
+      title:"iPhone 12 Pro Max 128 GB Golen Color",
+      price: "$38",
+      image: game_remote,
+    }
+  ]
   return (
-    <div className="container relative border border-red-500">
+    <div className="container relative ">
       {/* navbar */}
       <nav className="flex justify-between items-center">
         {/* hamburger menu */}
@@ -43,7 +90,7 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
         </div>
 
         {/* nav-icon container */}
-        <div className="flex gap-4 p-2">
+        <div className="flex gap-6 p-2 relative">
           {/* heart */}
           <div className="relative hidden md:block">
             <CiHeart className="size-6" />
@@ -53,14 +100,35 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
           </div>
 
           {/* bag */}
-          <div>
+          <div className="group">
             <div className="relative">
-             <NavLink to={'/cart'}><IoBagOutline className="size-5 mt-1" /></NavLink> 
+              <NavLink to={"/cart"}>
+                <IoBagOutline className="size-5 mt-1" />
+              </NavLink>
               <div className="size-5 rounded-full flex justify-center items-center font-semibold bg-[#ffbb38] absolute bottom-3 left-2">
                 <span className="font-light">{0}</span>
               </div>
             </div>
+
+            {/* bag hover container */}
+            <div className="absolute z-50 -left-30 top-8 p-2  hidden group-hover:block border border-red-500  h-96 bg-white">
+              {/* product div */}
+              <div className="overflow-y-auto h-60 thin-scrollbar">
+                {cartHoverProducts.map((product) => (
+                  <CartHoverProduct product={product} />
+                ))}
+              </div>
+              {/* total price */}
+              <div className="flex justify-between mt-2 px-2">
+                <p className="font-medium">Subtotal</p>
+                <p className="text-red-500">$365</p>
+              </div>
+              {/* <div>
+                <button className="bg-gray-400">View Cart</button>
+              </div> */}
+            </div>
           </div>
+
 
           {/* person */}
           <GoPerson className="size-5 hidden md:block" />
@@ -68,13 +136,19 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
       </nav>
 
       {/* sidebar */}
-      <div className={`fixed inset-0 z-50 transform ${sidebar ? 'translate-x-0' :'-translate-x-full'} transition-transform duration-300 linear lg:hidden`}>
-      {sidebar && <Sidebar sidebar={sidebar} setSidebar={setSidebar}/>}
+      <div
+        className={`fixed inset-0 z-50 transform ${
+          sidebar ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 linear lg:hidden`}
+      >
+        {sidebar && <Sidebar sidebar={sidebar} setSidebar={setSidebar} />}
       </div>
 
       {sidebar && (
         <div
-          className={`fixed inset-0 bg-black ${sidebar ? "opacity-50":"opacity-0"} transition-opacity duration-300 linear z-40 lg:hidden`}
+          className={`fixed inset-0 bg-black ${
+            sidebar ? "opacity-50" : "opacity-0"
+          } transition-opacity duration-300 linear z-40 lg:hidden`}
           onClick={() => setSidebar(false)}
         ></div>
       )}
