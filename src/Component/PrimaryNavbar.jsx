@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import CartHoverProduct from "./CartHoverProduct";
 import game_remote from "../assets/GameRemote.jpg";
+import { Scrollbar } from 'react-scrollbars-custom';
 
 function PrimaryNavbar({ sidebar, setSidebar }) {
   const cartHoverProducts =[
@@ -56,7 +57,7 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
     }
   ]
   return (
-    <div className="container relative ">
+    <div className="container relative">
       {/* navbar */}
       <nav className="flex justify-between items-center">
         {/* hamburger menu */}
@@ -111,21 +112,43 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
             </div>
 
             {/* bag hover container */}
-            <div className="absolute z-50 -left-30 top-8 p-2  hidden group-hover:block border border-red-500  h-96 bg-white">
+            <div className="h-[600px] absolute z-50 -left-30 top-8 hidden group-hover:block bg-white pt-4">
+
+            {/* horizontal ruler */}
+            <hr className="border-2 border-[#ffbb38] text-[#ffbb38]"/>
               {/* product div */}
-              <div className="overflow-y-auto h-60 thin-scrollbar">
-                {cartHoverProducts.map((product) => (
+              <div className="h-60 overflow-y-auto pt-4"style={{scrollbarWidth:"thin"}}>
+              
+              <div className="px-2">
+              {cartHoverProducts.map((product) => (
                   <CartHoverProduct product={product} />
                 ))}
               </div>
-              {/* total price */}
-              <div className="flex justify-between mt-2 px-2">
+              </div>
+
+              {/* horizontal ruler */}
+              <hr className="border-gray-200 mx-4"/>
+
+             {/*second div */} 
+             <div className="mx-4 py-4">
+                {/* total price */}
+                <div className="flex justify-between mt-2">
                 <p className="font-medium">Subtotal</p>
                 <p className="text-red-500">$365</p>
               </div>
-              {/* <div>
-                <button className="bg-gray-400">View Cart</button>
-              </div> */}
+              {/* button container */}
+              <div className="flex flex-col my-4 gap-2">
+                <button className="bg-gray-300 p-4">View Cart</button>
+                <button className="bg-[#ffbb38] p-4">Checkout Now</button>
+              </div>
+             </div>
+            
+             {/* horizontal ruler */}
+             <hr className="border-gray-200 mx-4"/>
+
+              {/* return policy */}
+              <p className="text-gray-400 px-4 text-center text-sm mt-4">Get Return Within <span className="text-black">30 Days</span></p>
+
             </div>
           </div>
 
