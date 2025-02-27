@@ -9,7 +9,7 @@ function Footer() {
   return (
     <div className=' bg-white container'>
       {/* logo */}
-      <div className='flex justify-center'>
+      <div className='flex justify-center mt-10'>
         <img src={logo} alt="" />
       </div>
 

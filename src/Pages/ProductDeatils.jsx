@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import GameRemote from '../assets/GameRemote.jpg'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Home from './Home'
 import productdetails1 from '../assets/product-details-1.png'
 import { MdOutlineStarPurple500 } from 'react-icons/md'
@@ -22,8 +22,6 @@ const ProductDeatils = () => {
       setCount(count - 1);
     }
   }
-
-  const { id } = useParams;
 
   const ProductData = [{ id: 1, image: productdetails1, title: "Samsung Galaxy Z Fold3 5G 3 colors in 512GB", discount: "$9.99", price: "$6.99" }]
 

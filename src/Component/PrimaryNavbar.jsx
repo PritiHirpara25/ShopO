@@ -19,37 +19,37 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
       image: game_remote,
     },
     {
-      id:1,
+      id:2,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:3,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:4,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:5,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:6,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:7,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
@@ -115,7 +115,7 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
               {/* product div */}
               <div className="overflow-y-auto h-60 thin-scrollbar">
                 {cartHoverProducts.map((product) => (
-                  <CartHoverProduct product={product} />
+                  <CartHoverProduct key={product.id} product={product} />
                 ))}
               </div>
               {/* total price */}
