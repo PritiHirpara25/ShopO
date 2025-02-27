@@ -5,6 +5,8 @@
     @apply w-full max-w-4xl mx-auto py-4 box-border;
   }
 
+
+
   /* footer */
   .footer_link{
     @apply  text-sm text-gray-400 transition-all duration-300 
@@ -12,4 +14,5 @@
   .footer_link:hover{
     @apply  text-black  border-black cursor-pointer 
   }
+  
 }

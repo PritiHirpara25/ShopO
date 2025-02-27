@@ -15,8 +15,8 @@ const Cards = ({ product }) => {
         navigate(`/product/${product.id}`);
     }
 
-    return (
-        <div className='relative max-w-80 p-7 shadow-xl group'>
+    return (    
+        <div className='relative max-w-80 h-96 p-7 shadow-xl group'>
 
             <div className='absolute top-12 right-8 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-5 group-hover:translate-x-0'>
                 <CiHeart className='m-2 bg-gray-200 text-3xl p-1' />
@@ -24,7 +24,7 @@ const Cards = ({ product }) => {
                 <AiOutlineFullscreen className='m-2 bg-gray-200 text-3xl p-1' />
             </div>
             <div className='flex justify-center'>
-                <img src={product.image} className='p-5 size-48' alt="" />
+                <img src={product.image} className='p-5 size-48 my-2' alt="" />
             </div>
             <div>
                 <div className='flex mb-2'>
@@ -37,7 +37,7 @@ const Cards = ({ product }) => {
                 <div>
                     <p className='line-clamp-2 mb-2 hover:text-blue-600' onClick={handleTitleClick}>{product.title}</p>
                     <div className='flex gap-x-2'>
-                        <del className='text-xl text-gray-400'>{product.discount}</del>
+                        {/* <del className='text-xl text-gray-400'>{product.discount}</del> */}
                         <span className='text-xl text-red-600 font-bold'>{product.price}</span>
                     </div>
                 </div>
