@@ -4,6 +4,8 @@ import HeadPhone from '../assets/HeadPhone.jpg';
 import { HiMiniMinusSmall, HiPlusSmall } from 'react-icons/hi2';
 import { IoClose } from "react-icons/io5";
 import { NavLink, useNavigate } from 'react-router-dom';
+import Footer from '../Component/Footer';
+import Coupan from '../Component/Coupan';
 
 const Cart = () => {
 
@@ -77,13 +79,13 @@ const Cart = () => {
 
       <div className='mx-52 flex justify-between'>
         <div>
-          <input type="text" placeholder='Discount Code' className='px-2 py-2.5 border border-gray-300' />
+          <input type="text" placeholder='Discount Code' className='px-2 py-2.5 border border-gray-300 focus:outline-none rounded-none' />
           <button className='bg-black text-white px-6 py-2.5'>Apply</button>
         </div>
 
         <div className='mb-28'>
           <div className='flex justify-end'>
-            <button className='bg-gray-200 font-semibold px-8 py-3'>Continue Shopping</button>
+            <button className='bg-gray-200 font-semibold px-8 py-3 cursor-pointer' onClick={() => navigate('/shop')}>Continue Shopping</button>
           </div>
           <div className='border border-gray-300 mt-5 w-96 p-5'>
             <div className='flex justify-between py-5'>
@@ -96,22 +98,22 @@ const Cart = () => {
               <div className='my-3'>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
-                    <input type="radio" name='priti' className='accent-pink-500' />
-                    <label htmlFor="">Free Shipping</label>
+                    <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
+                    <label for='cart' htmlFor="">Free Shipping</label>
                   </div>
                   <span>+$00.00</span>
                 </div>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
-                    <input type="radio" name='priti' className='accent-pink-500' />
-                    <label htmlFor="">Flat Rate</label>
+                    <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
+                    <label for='cart' htmlFor="">Flat Rate</label>
                   </div>
                   <span>+$00.00</span>
                 </div>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
-                    <input type="radio" name='priti' className='accent-pink-500' />
-                    <label htmlFor="">Local Delivery</label>
+                    <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
+                    <label for='cart' htmlFor="">Local Delivery</label>
                   </div>
                   <span>+$00.00</span>
                 </div>
@@ -128,6 +130,11 @@ const Cart = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className=''>
+        <Coupan />
+        <Footer />
       </div>
 
     </div >

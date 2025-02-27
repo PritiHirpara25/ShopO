@@ -3,6 +3,8 @@ import GameRemote from '../assets/GameRemote.jpg';
 import HeadPhone from '../assets/HeadPhone.jpg';
 import Cards from '../Helper/Cards'
 import ShopSidebar from '../Component/ShopSidebar'
+import Coupan from '../Component/Coupan'
+import Footer from '../Component/Footer'
 
 const Shop = () => {
   const card = [
@@ -113,8 +115,10 @@ const Shop = () => {
     },
   ];
   return (
-  
-      <div className='container flex mt-10'>
+
+    <div className='container mt-10'>
+
+      <div className=' flex '>
 
         <div>
           <ShopSidebar />
@@ -127,8 +131,16 @@ const Shop = () => {
             </div>
           ))}
         </div>
+
       </div>
-  
+
+      <div className='mt-36'>
+        <Coupan />
+        <Footer />
+      </div>
+
+    </div>
+
   )
 }
 

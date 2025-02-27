@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Coupan from '../Component/Coupan'
+import Footer from '../Component/Footer'
 
 const Payment = () => {
   return (
@@ -113,6 +115,11 @@ const Payment = () => {
             <button className='bg-black text-white w-full mb-10 py-2'>Pay</button>
           </div>
         </div>
+      </div>
+
+      <div className='mt-36'>
+        <Coupan />
+        <Footer />
       </div>
 
     </div>

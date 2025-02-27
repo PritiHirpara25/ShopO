@@ -7,6 +7,8 @@ import { MdOutlineStarPurple500 } from 'react-icons/md'
 import { HiMiniMinusSmall, HiPlusSmall } from "react-icons/hi2";
 import { BsHeart } from "react-icons/bs";
 import { IoIosFlag } from "react-icons/io";
+import Coupan from '../Component/Coupan'
+import Footer from '../Component/Footer'
 
 const ProductDeatils = () => {
 
@@ -27,9 +29,11 @@ const ProductDeatils = () => {
 
   return (
     <div className='mt-10'>
+
       <div>
-        {/* <NavLink to='/' element={<Home/>}>Home / Single Product</NavLink> */}
+        <NavLink to='/'>Home / Single Product</NavLink>
       </div>
+
       <div className=' mx-52 mb-16'>
         {ProductData.map((item) => {
           return (
@@ -121,7 +125,8 @@ const ProductDeatils = () => {
           )
         })}
       </div>
-      {/* Desccription */}
+
+      {/* Description */}
       <div className='bg-[#f8f8f8] pb-20'>
         <div className='mx-52'>
           <p className='py-3'>Description</p>
@@ -141,6 +146,12 @@ const ProductDeatils = () => {
           </div>
         </div>
       </div>
+
+      <div className='mt-36'>
+        <Coupan />
+        <Footer />
+      </div>
+
     </div>
   )
 }
