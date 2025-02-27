@@ -123,7 +123,7 @@ const Cart = () => {
             </div>
             <div className='flex items-center'>
               {/* <NavLink> */}
-              <button className='bg-black text-white px-24 py-3' onClick={() => navigate('/checkout')}>Proceed to Checkout</button>
+              <button className='bg-black text-white px-24 py-3 cursor-pointer' onClick={() => navigate('/checkout')}>Proceed to Checkout</button>
               {/* </NavLink> */}
             </div>
           </div>

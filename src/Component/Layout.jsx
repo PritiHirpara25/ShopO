@@ -8,6 +8,7 @@ import SignUp from '../Pages/SignUp'
 import Cart from '../Pages/Cart'
 import ProductDetails from '../Pages/ProductDeatils'
 import Checkout from '../Pages/Checkout';
+import Payment from '../Pages/Payment'
 
 const Layout = ({children}) => {
   const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const Layout = ({children}) => {
         {
           path:'/checkout',
           element:<Checkout/>
+        },
+        {
+          path:'/payment',
+          element:<Payment/>
         }
       ]
     }
