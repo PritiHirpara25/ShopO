@@ -2,9 +2,10 @@ import React from 'react'
 import PrimaryNavbar from './PrimaryNavbar'
 import SecondryNavbar from './SecondryNavbar'
 import { Outlet } from 'react-router-dom'
+import { useState } from 'react'
 
-function Navbar({ sidebar, setSidebar }) {
-
+function Navbar() {
+  const [sidebar, setSidebar] = useState(false);
   return (
     <>
       <div>

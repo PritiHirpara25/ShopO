@@ -15,7 +15,6 @@ import { NavLink } from "react-router-dom";
 
 function SecondryNavbar() {
   const [toggleCategory, setToggleCategory] = useState(false);
-  console.log(toggleCategory);
   return (
     <div className="bg-[#ffbb38]">
       <nav className="container flex justify-between items-center">
