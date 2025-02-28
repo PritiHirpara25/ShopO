@@ -6,6 +6,8 @@ import { IoClose } from "react-icons/io5";
 import { NavLink, useNavigate } from 'react-router-dom';
 import Footer from '../Component/Footer';
 import Coupan from '../Component/Coupan';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeToCart } from '../Redux/CartSlice';
 
 const Cart = () => {
 
@@ -22,12 +24,9 @@ const Cart = () => {
     }
   }
 
-  const CartData = [
-    { id: 1, image: GameRemote, title: "iPhone 12 Pro Max 128GB", size: "small", price: "$38" },
-    { id: 2, image: HeadPhone, title: "iPhone 12 Pro Max 128GB", size: "small", price: "$38" },
-    { id: 3, image: GameRemote, title: "iPhone 12 Pro Max 128GB", size: "small", price: "$38" },
-    { id: 4, image: GameRemote, title: "iPhone 12 Pro Max 128GB", size: "small", price: "$38" }
-  ]
+  const cartData = useSelector(state => state.cart)
+  const dispatch = useDispatch();
+
   return (
     <div className=''>
 
@@ -52,11 +51,12 @@ const Cart = () => {
             <th className='px-5'></th>
           </tr>
         </thead>
-        {
-          CartData.map((item) => {
-            return (
-              <tbody>
-                <tr className=''>
+
+        <tbody>
+          {
+            cartData.map((item) => {
+              return (
+                <tr className='' key={item.id}>
                   <td className='p-5 flex items-center gap-x-14'><img src={item.image} alt="" className='size-20 ' />{item.title}</td>
                   <td className='px-12'><p className='bg-[#e4bc87] p-2 rounded-full w-fit h-fit border border-gray-200'></p></td>
                   <td className='px-12'>{item.size}</td>
@@ -69,12 +69,12 @@ const Cart = () => {
                     </span>
                   </td>
                   <td className='px-10'>$38</td>
-                  <td className='px-10'><IoClose /></td>
+                  <td className='px-10 hover:cursor-pointer'><IoClose onClick={()=>dispatch(removeToCart(item.id))}/></td>
                 </tr>
-              </tbody>
-            )
-          })
-        }
+              )
+            })
+          }
+        </tbody>
       </table>
 
       <div className='mx-52 flex justify-between'>
@@ -99,21 +99,21 @@ const Cart = () => {
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
-                    <label for='cart' htmlFor="">Free Shipping</label>
+                    <label htmlFor="cart">Free Shipping</label>
                   </div>
                   <span>+$00.00</span>
                 </div>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
-                    <label for='cart' htmlFor="">Flat Rate</label>
+                    <label htmlFor="cart">Flat Rate</label>
                   </div>
                   <span>+$00.00</span>
                 </div>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
-                    <label for='cart' htmlFor="">Local Delivery</label>
+                    <label htmlFor="cart">Local Delivery</label>
                   </div>
                   <span>+$00.00</span>
                 </div>
