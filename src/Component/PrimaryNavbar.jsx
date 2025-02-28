@@ -10,8 +10,10 @@ import { useState } from "react";
 import CartHoverProduct from "./CartHoverProduct";
 import game_remote from "../assets/GameRemote.jpg";
 import { Scrollbar } from 'react-scrollbars-custom';
+import { useSelector } from "react-redux";
 
 function PrimaryNavbar({ sidebar, setSidebar }) {
+  const cartData = useSelector(state => state.cart);
   const cartHoverProducts =[
     {
       id:1,
@@ -20,37 +22,37 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
       image: game_remote,
     },
     {
-      id:1,
+      id:2,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:3,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:4,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:5,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:6,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
     },
     {
-      id:1,
+      id:7,
       title:"iPhone 12 Pro Max 128 GB Golen Color",
       price: "$38",
       image: game_remote,
@@ -107,7 +109,7 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
                 <IoBagOutline className="size-5 mt-1" />
               </NavLink>
               <div className="size-5 rounded-full flex justify-center items-center font-semibold bg-[#ffbb38] absolute bottom-3 left-2">
-                <span className="font-light">{0}</span>
+                <span className="font-light">{cartData.length}</span>
               </div>
             </div>
 
@@ -120,8 +122,8 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
               <div className="h-60 overflow-y-auto pt-4"style={{scrollbarWidth:"thin"}}>
               
               <div className="px-2">
-              {cartHoverProducts.map((product) => (
-                  <CartHoverProduct product={product} />
+              {cartData.map((product) => (
+                  <CartHoverProduct product={product} key={product.id} />
                 ))}
               </div>
               </div>

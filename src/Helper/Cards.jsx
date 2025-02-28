@@ -6,6 +6,8 @@ import { CiHeart } from "react-icons/ci";
 import { LuRefreshCcw } from "react-icons/lu";
 import { AiOutlineFullscreen } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Redux/CartSlice';
 
 const Cards = ({ product }) => {
 
@@ -14,6 +16,8 @@ const Cards = ({ product }) => {
     const handleTitleClick = () => {
         navigate(`/product/${product.id}`);
     }
+
+    const dispatch = useDispatch(); 
 
     return (    
         <div className='relative max-w-80 h-96 p-7 shadow-xl group'>
@@ -44,8 +48,7 @@ const Cards = ({ product }) => {
             </div>
 
             <div className="absolute bottom-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300  translate-y-5 group-hover:translate-y-0">
-
-                <button className="flex items-center gap-x-3 bg-[#ffbb38] px-20 py-2">
+                <button className="flex items-center gap-x-3 bg-[#ffbb38] px-20 py-2 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
                     <HiOutlineShoppingBag /> Add To Cart
                 </button>
             </div>

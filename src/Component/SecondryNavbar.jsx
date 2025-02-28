@@ -32,7 +32,7 @@ function SecondryNavbar() {
 
           {/* toggle-category container */}
 
-          <div className={`bg-purple-200 w-60 mt-4 text-sm absolute z-20 top-0 rounded-md transform transition-all duration-2000 ease-in-out ${toggleCategory?"opacity-100 translate-y-0":"opacity-0 translate-y-full"}`}>
+          <div className={`bg-purple-200 w-60 mt-4 text-sm absolute  top-0 rounded-md transform transition-all duration-2000 ease-in-out ${toggleCategory?"opacity-100 translate-y-0":"opacity-0 translate-y-full"}`}>
             {/* mobile & laptop */}
             <div className="flex justify-between items-center py-4 hover:bg-yellow-200">
               <div className="flex justify-between items-center gap-4">
