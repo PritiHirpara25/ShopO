@@ -10,12 +10,12 @@ function CartHoverProduct() {
        <img src={game_remote} alt="remote_image" className="size-16"/>
      </div>
      <div className="flex flex-col gap-2">
-       <p className="hover:text-blue-500 text-[12px] font-medium">iPhone 12 Pro Max 128 GB Golen Color</p>
+       <p className="hover:text-blue-500 text-[12px] font-medium hover:cursor-pointer">iPhone 12 Pro Max 128 GB Golen Color</p>
        <p className="text-red-500">$38</p>
      </div>
     </div>
 
-     <div className="text-gray-400">
+     <div className="text-gray-400 hover:cursor-pointer hover:text-red-500">
        X
      </div>
 
