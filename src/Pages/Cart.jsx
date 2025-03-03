@@ -1,34 +1,21 @@
 import React, { useState } from 'react'
-import GameRemote from '../assets/GameRemote.jpg';
-import HeadPhone from '../assets/HeadPhone.jpg';
 import { HiMiniMinusSmall, HiPlusSmall } from 'react-icons/hi2';
 import { IoClose } from "react-icons/io5";
 import { NavLink, useNavigate } from 'react-router-dom';
 import Footer from '../Component/Footer';
 import Coupan from '../Component/Coupan';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeToCart } from '../Redux/CartSlice';
+import { removeToCart,incrementQuantity,decrementQuantity } from '../Redux/CartSlice';
 
 const Cart = () => {
 
   const navigate = useNavigate();
-
-  const [count, setCount] = useState(1);
-
-  const handleIncrement = () => {
-    setCount(count + 1);
-  }
-  const handleDecrement = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  }
-
-  const cartData = useSelector(state => state.cart)
+  const cartData = useSelector(state => state.cart);
   const dispatch = useDispatch();
-
+  // total 
+  const total = cartData.reduce((sum,item)=> sum + item.price * item.quantity,0);
   return (
-    <div className=''>
+    <div >
 
       {/* Cart Heading */}
       <div className='bg-[#fffaef] flex justify-center relative'>
@@ -63,12 +50,12 @@ const Cart = () => {
                   <td className='px-10'>{item.price}</td>
                   <td className='px-12'>
                     <span className='flex items-center gap-x-4 border border-gray-300 w-fit py-2 px-4 '>
-                      <button className='text-gray-500' onClick={handleDecrement}><HiMiniMinusSmall /></button>
-                      <p>{count}</p>
-                      <button className='text-gray-500' onClick={handleIncrement}><HiPlusSmall /></button>
+                      <button className='text-gray-500 ' onClick={()=>dispatch(decrementQuantity(item.id))}><HiMiniMinusSmall /></button>
+                      <p>{item.quantity}</p>
+                      <button className='text-gray-500 ' onClick={()=>dispatch(incrementQuantity(item.id))}><HiPlusSmall /></button>
                     </span>
                   </td>
-                  <td className='px-10'>$38</td>
+                  <td className='px-10'>${item.price * item.quantity}</td>
                   <td className='px-10 hover:cursor-pointer'><IoClose onClick={()=>dispatch(removeToCart(item.id))}/></td>
                 </tr>
               )
@@ -90,7 +77,7 @@ const Cart = () => {
           <div className='border border-gray-300 mt-5 w-96 p-5'>
             <div className='flex justify-between py-5'>
               <p>SubTotal</p>
-              <span className='text-red-600'>$365</span>
+              <span className='text-red-600'>${total.toFixed(2)}</span> 
             </div>
             <hr className='text-gray-300' />
             <div className='py-5'>

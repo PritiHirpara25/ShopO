@@ -5,3 +5,65 @@ md : 768px
 lg : 1024px
 xl : 1280px
 2xl : 1536px
+
+1 . Cart Slice
+    - Add To Cart (Added)
+    - Remove To Cart (Added)
+    - Update Item Quantity
+    - Clear Cart
+
+2 . Product Slice
+    - Fetch Product (Added)
+    - Filter Product by Category (Added)
+    - Sort by Price
+    - Set Loading (Added)
+    - Set Error (Added)
+
+3 . User Slice
+    - Login User
+    - Logout User 
+    - Register User
+    - Update User Profile
+
+4 . wishlist Slice
+    - Add To Wishlist
+    - Remove To Wishlist
+
+5 . Order Slice
+    - Place Order
+    - Fetch Order History
+    - Cancel Order
+
+6 . Category Slice
+    - Fetch Category
+
+7 . Search Slice
+    - setSearch Query
+    - Fetch Search Query
+
+8 . Notification Slice
+    - Add Notification
+    - Remove Notification
+
+9 . Shipping Slice
+    - SetShipping Address
+    - SetShipping Options
+    - Select ShippingOption
+
+10 . Payment Slice
+    - setPayment Methods
+    - Select Payment Methods
+    - Process Payment
+
+11 . Review Slice
+    - Fetch Review
+    - Add Review
+
+12 . Discount / Coupan Slice
+    - Apply Discount
+    - Remove Discount
+
+13 . UI Slice
+    - Open Model
+    - Close Model
+    - SetLoading

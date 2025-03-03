@@ -5,7 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { GoPerson } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Sidebar from "./Sidebar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CartHoverProduct from "./CartHoverProduct";
 import game_remote from "../assets/GameRemote.jpg";
@@ -13,51 +13,11 @@ import { Scrollbar } from 'react-scrollbars-custom';
 import { useSelector } from "react-redux";
 
 function PrimaryNavbar({ sidebar, setSidebar }) {
+
   const cartData = useSelector(state => state.cart);
-  const cartHoverProducts =[
-    {
-      id:1,
-      title:"iPhone 12 Pro Max 128 GB Golen Color",
-      price: "$38",
-      image: game_remote,
-    },
-    {
-      id:2,
-      title:"iPhone 12 Pro Max 128 GB Golen Color",
-      price: "$38",
-      image: game_remote,
-    },
-    {
-      id:3,
-      title:"iPhone 12 Pro Max 128 GB Golen Color",
-      price: "$38",
-      image: game_remote,
-    },
-    {
-      id:4,
-      title:"iPhone 12 Pro Max 128 GB Golen Color",
-      price: "$38",
-      image: game_remote,
-    },
-    {
-      id:5,
-      title:"iPhone 12 Pro Max 128 GB Golen Color",
-      price: "$38",
-      image: game_remote,
-    },
-    {
-      id:6,
-      title:"iPhone 12 Pro Max 128 GB Golen Color",
-      price: "$38",
-      image: game_remote,
-    },
-    {
-      id:7,
-      title:"iPhone 12 Pro Max 128 GB Golen Color",
-      price: "$38",
-      image: game_remote,
-    }
-  ]
+  const wishlistData = useSelector(state => state.wishlist);
+  const navigate = useNavigate()
+
   return (
     <div className="container relative">
       {/* navbar */}
@@ -96,9 +56,11 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
         <div className="flex gap-6 p-2 relative">
           {/* heart */}
           <div className="relative hidden md:block">
-            <CiHeart className="size-6" />
+            <NavLink to="/wishlist">
+              <CiHeart className="size-6" />
+            </NavLink>
             <div className="size-5 rounded-full flex justify-center items-center font-semibold bg-[#ffbb38] absolute bottom-3 left-3">
-              <span className="font-light">{0}</span>
+              <span className="font-light">{wishlistData.length}</span>
             </div>
           </div>
 
@@ -114,39 +76,48 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
             </div>
 
             {/* bag hover container */}
-            <div className="h-[600px] absolute z-50 -left-30 top-8 hidden group-hover:block bg-white pt-4">
+            <div className="h-[600px]  w-72 absolute z-50 -left-30 top-8 hidden group-hover:block bg-white pt-4">
 
-            {/* horizontal ruler */}
-            <hr className="border-2 border-[#ffbb38] text-[#ffbb38]"/>
+              {/* horizontal ruler */}
+              <hr className="border-2 border-[#ffbb38] text-[#ffbb38]" />
               {/* product div */}
-              <div className="h-60 overflow-y-auto pt-4"style={{scrollbarWidth:"thin"}}>
-              
-              <div className="px-2">
-              {cartData.map((product) => (
-                  <CartHoverProduct product={product} key={product.id} />
-                ))}
-              </div>
+              <div>
+
+                {cartData.length === 0 ? <div className="p-4">Cart is Empty <NavLink to='/shop' className='text-[#ffbb38] hover:underline'>Shop Now</NavLink></div> :
+                  <div
+                    className={`overflow-y-auto pt-4 ${cartData.length >= 4 ? "max-h-[300px]" : cartData.length === 4 ? "h-[220px]" : "h-auto"
+                      }`}
+                    style={{ scrollbarWidth: cartData.length >= 4 ? "thin" : "none" }}
+                  >
+
+                    <div className="px-2">
+                      {cartData.map((product) => (
+                        <CartHoverProduct product={product} key={product.id} />
+                      ))}
+                    </div>
+                  </div>}
+
               </div>
 
               {/* horizontal ruler */}
-              <hr className="border-gray-200 mx-4"/>
+              <hr className="border-gray-200 mx-4" />
 
-             {/*second div */} 
-             <div className="mx-4 py-4">
+              {/*second div */}
+              <div className="mx-4 py-4">
                 {/* total price */}
                 <div className="flex justify-between mt-2">
-                <p className="font-medium">Subtotal</p>
-                <p className="text-red-500">$365</p>
+                  <p className="font-medium">Subtotal</p>
+                  <p className="text-red-500 font-semibold">$365</p>
+                </div>
+                {/* button container */}
+                <div className="flex flex-col my-4 gap-2">
+                  <button className="bg-gray-300 p-4 cursor-pointer" onClick={() => navigate('/cart')}>View Cart</button>
+                  <button className="bg-[#ffbb38] p-4 cursor-pointer" onClick={() => navigate('checkout')}>Checkout Now</button>
+                </div>
               </div>
-              {/* button container */}
-              <div className="flex flex-col my-4 gap-2">
-                <button className="bg-gray-300 p-4">View Cart</button>
-                <button className="bg-[#ffbb38] p-4">Checkout Now</button>
-              </div>
-             </div>
-            
-             {/* horizontal ruler */}
-             <hr className="border-gray-200 mx-4"/>
+
+              {/* horizontal ruler */}
+              <hr className="border-gray-200 mx-4" />
 
               {/* return policy */}
               <p className="text-gray-400 px-4 text-center text-sm mt-4">Get Return Within <span className="text-black">30 Days</span></p>
@@ -162,18 +133,16 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
 
       {/* sidebar */}
       <div
-        className={`fixed inset-0 z-50 transform ${
-          sidebar ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 linear lg:hidden`}
+        className={`fixed inset-0 z-50 transform ${sidebar ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 linear lg:hidden`}
       >
         {sidebar && <Sidebar sidebar={sidebar} setSidebar={setSidebar} />}
       </div>
 
       {sidebar && (
         <div
-          className={`fixed inset-0 bg-black ${
-            sidebar ? "opacity-50" : "opacity-0"
-          } transition-opacity duration-300 linear z-40 lg:hidden`}
+          className={`fixed inset-0 bg-black ${sidebar ? "opacity-50" : "opacity-0"
+            } transition-opacity duration-300 linear z-40 lg:hidden`}
           onClick={() => setSidebar(false)}
         ></div>
       )}

@@ -23,10 +23,8 @@ const Payment = () => {
             {/* UPI */}
             <div className='mx-2 '>
               <div className='flex space-x-2 '>
-                <form action="">
                   <input className='accent-pink-500' name='option' type="radio" />
                   <label htmlFor="">UPI</label>
-                </form>
               </div>
               <div className='mx-5'>
                 <label htmlFor="">please enter your UPI ID</label>
@@ -42,10 +40,8 @@ const Payment = () => {
             {/* direct bank transfer */}
             <div className='mx-2 my-5 '>
               <div className='space-x-2'>
-                <form action="">
                   <input className='accent-pink-500' name='option' type="radio" />
                   <label htmlFor="">Bank Transfer</label>
-                </form>
               </div>
               <div className='mx-5 my-2'>
                 <select name="" id="" className='border border-gray-400 rounded-sm w-72 p-1 focus:outline-none'>
