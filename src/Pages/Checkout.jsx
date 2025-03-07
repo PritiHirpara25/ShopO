@@ -2,10 +2,13 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Coupan from '../Component/Coupan';
 import Footer from '../Component/Footer';
+import { useSelector } from 'react-redux';
 
 const Checkout = () => {
 
   const navigate = useNavigate();
+
+  const cartData = useSelector(state => state.cart);
 
   return (
     <div>
@@ -18,7 +21,7 @@ const Checkout = () => {
         <p className='font-bold text-3xl my-20'>Checkout</p>
       </div>
 
-      <div className='mx-52'>
+      <div className=''>
 
         <div className='mt-5 flex justify-center'>
           <button className='bg-gray-200 py-3 px-20 cursor-pointer' onClick={() => navigate('/login')}>Log into Your Account</button>
@@ -88,32 +91,22 @@ const Checkout = () => {
               </div>
               <hr className='text-gray-300 my-4' />
               <div className='my-5'>
-                <div className='my-2 flex items-center justify-between'>
-                  <div>
-                    <p>Apple Watch</p>
-                    <p className='text-gray-400 text-sm py-1'>64 GB , Black , 44mm , Chain Belt</p>
-                  </div>
-                  <p>$38</p>
-                </div>
-                <div className='my-2 flex items-center justify-between'>
-                  <div>
-                    <p>Apple Watch</p>
-                    <p className='text-gray-400 text-sm py-1'>64 GB , Black , 44mm , Chain Belt</p>
-                  </div>
-                  <p>$38</p>
-                </div>
-                <div className='my-2 flex items-center justify-between'>
-                  <div>
-                    <p>Apple Watch</p>
-                    <p className='text-gray-400 text-sm py-1'>64 GB , Black , 44mm , Chain Belt</p>
-                  </div>
-                  <p>$38</p>
-                </div>
+                {cartData.map((item) => {
+                  return (
+                    <div className='my-2 flex items-center justify-between'>
+                      <div>
+                        <p>{item.title}</p>
+                        <p className='text-gray-400 text-sm py-1 line-clamp-1'>{item.description}</p>
+                      </div>
+                      <p>₹{item.price}</p>
+                    </div>
+                  )
+                })}
               </div>
               <hr className='text-gray-300 my-4' />
               <div className='my-5 flex justify-between'>
                 <p>SUBTOTAL</p>
-                <p>$365</p>
+                <p>₹365</p>
               </div>
               <div className='my-5'>
                 <div className='flex justify-between items-center'>
@@ -125,7 +118,7 @@ const Checkout = () => {
               <hr className='text-gray-300 my-4' />
               <div className='flex items-center justify-between text-2xl'>
                 <p>Total</p>
-                <p className='text-red-600'>$365</p>
+                <p className='text-red-600'>₹365</p>
               </div>
               <div className='my-6'>
                 <button onClick={() => navigate('/payment')} className='bg-black text-white w-full py-3 font-semibold'>Make Payment</button>

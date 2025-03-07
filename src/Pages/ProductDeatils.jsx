@@ -32,11 +32,11 @@ const ProductDeatils = () => {
         <NavLink to='/'>Home / Single Product</NavLink>
       </div>
 
-      <div className=' mx-52 mb-16'>
+      <div className='mb-16'>
         {ProductData.map((item) => {
           return (
             <>
-              <div className='flex'>
+              <div className='flex' key={item.id}>
 
                 {/* image */}
                 <div>
@@ -136,10 +136,10 @@ const ProductDeatils = () => {
           <div className=''>
             <h3 className='pt-8 pb-3 text-xl'>Features:</h3>
             <div className='text-gray-400 space-y-2'>
-            <li>slim body with metal cover</li>
-            <li>latest Intel Core i5-1135G7 processor (4 cores / 8 threads)</li>
-            <li>8GB DDR4 RAM and fast 512GB PCIe SSD</li>
-            <li>NVIDIA GeForce MX350 2GB GDDR5 graphics card backlit keyboard, touchpad with gesture support</li>
+              <li>slim body with metal cover</li>
+              <li>latest Intel Core i5-1135G7 processor (4 cores / 8 threads)</li>
+              <li>8GB DDR4 RAM and fast 512GB PCIe SSD</li>
+              <li>NVIDIA GeForce MX350 2GB GDDR5 graphics card backlit keyboard, touchpad with gesture support</li>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ function CartHoverProduct({ product }) {
         </div>
         <div className="flex flex-col gap-2">
           <p className="hover:text-blue-500 text-sm font-medium">iPhone 12 Pro Max 128 GB Golen Color</p>
-          <p className="text-red-500 font-semibold">$38</p>
+          <p className="text-red-500 font-semibold">₹38</p>
         </div>
       </div>
 

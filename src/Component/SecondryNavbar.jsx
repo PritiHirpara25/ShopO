@@ -19,10 +19,11 @@ function SecondryNavbar() {
     <div className="bg-[#ffbb38]">
       <nav className="container flex justify-between items-center">
         {/* All Category */}
+        
         <div className="relative rounded-lg">
 
           {/* catorgy-toggle button */}
-          <div className="absolute w-60 z-10 -top-4 flex justify-between items-center gap-8 bg-white py-2 pb-6 px-4 rounded-md" onClick={()=>setToggleCategory((prev)=>!prev)}>
+          <div className="absolute w-60 z-10 -top-4 flex justify-between items-center gap-8 bg-white py-2 pb-6 px-4 rounded-md" onClick={() => setToggleCategory((prev) => !prev)}>
             <div className="flex gap-2 items-center">
               <RxHamburgerMenu />
               <p>All Categories</p>
@@ -32,7 +33,7 @@ function SecondryNavbar() {
 
           {/* toggle-category container */}
 
-          <div className={`bg-purple-200 w-60 mt-4 text-sm absolute  top-0 rounded-md transform transition-all duration-2000 ease-in-out ${toggleCategory?"opacity-100 translate-y-0":"opacity-0 translate-y-full"}`}>
+          <div className={`bg-purple-200 w-60 mt-4 text-sm absolute  top-0 rounded-md transform transition-all duration-2000 ease-in-out ${toggleCategory ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"}`}>
             {/* mobile & laptop */}
             <div className="flex justify-between items-center py-4 hover:bg-yellow-200">
               <div className="flex justify-between items-center gap-4">
@@ -110,10 +111,10 @@ function SecondryNavbar() {
         {/* nav-link container */}
         <div>
           <ul className="flex gap-8">
-           <NavLink to="/"> <li>Home</li></NavLink>
-           <NavLink to="/shop"> <li>Shop</li></NavLink>
-           <NavLink to="/login"> <li>Login</li></NavLink>
-           <NavLink to="/signup"><li>SignUp</li></NavLink>
+            <NavLink to="/"> <li>Home</li></NavLink>
+            <NavLink to="/shop"> <li>Shop</li></NavLink>
+            <NavLink to="/login"> <li>Login</li></NavLink>
+            <NavLink to="/signup"><li>SignUp</li></NavLink>
           </ul>
         </div>
 

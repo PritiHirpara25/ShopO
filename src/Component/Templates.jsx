@@ -8,10 +8,10 @@ function Templates() {
     <div>
       {/* Templates */}
       <div className='container  mt-6 flex justify-between'>
-        <div >
+        <div>
           <img src={samsung_phone} alt="samsung phone image" className='w-full h-full max-w-full '/>
         </div>
-        <div className='flex flex-col gap-4 '>
+        <div className='flex flex-col gap-4'>
           <img src={apple_smartWatch} alt="smartwatch image" className='w-full h-auto ' />
           <img src={gameXbox} alt="gamexbox image" className='w-full h-auto '/>
         </div>

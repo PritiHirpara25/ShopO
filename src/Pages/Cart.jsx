@@ -26,7 +26,7 @@ const Cart = () => {
       </div>
 
       {/* Cart data in table form */}
-      <table className='mx-52 mt-10'>
+      <table className='mt-10'>
         <thead>
           <tr className='bg-gray-200 text-sm m-8'>
             <th className='p-5'>PRODUCT</th>
@@ -47,7 +47,7 @@ const Cart = () => {
                   <td className='p-5 flex items-center gap-x-14'><img src={item.image} alt="" className='size-20 ' />{item.title}</td>
                   <td className='px-12'><p className='bg-[#e4bc87] p-2 rounded-full w-fit h-fit border border-gray-200'></p></td>
                   <td className='px-12'>{item.size}</td>
-                  <td className='px-10'>{item.price}</td>
+                  <td className='px-10'>₹ {item.price}</td>
                   <td className='px-12'>
                     <span className='flex items-center gap-x-4 border border-gray-300 w-fit py-2 px-4 '>
                       <button className='text-gray-500 ' onClick={()=>dispatch(decrementQuantity(item.id))}><HiMiniMinusSmall /></button>
@@ -55,7 +55,7 @@ const Cart = () => {
                       <button className='text-gray-500 ' onClick={()=>dispatch(incrementQuantity(item.id))}><HiPlusSmall /></button>
                     </span>
                   </td>
-                  <td className='px-10'>${item.price * item.quantity}</td>
+                  <td className='px-10'>₹ {item.price * item.quantity}</td>
                   <td className='px-10 hover:cursor-pointer'><IoClose onClick={()=>dispatch(removeToCart(item.id))}/></td>
                 </tr>
               )
@@ -64,7 +64,7 @@ const Cart = () => {
         </tbody>
       </table>
 
-      <div className='mx-52 flex justify-between'>
+      <div className='flex justify-between'>
         <div>
           <input type="text" placeholder='Discount Code' className='px-2 py-2.5 border border-gray-300 focus:outline-none rounded-none' />
           <button className='bg-black text-white px-6 py-2.5'>Apply</button>
@@ -77,7 +77,7 @@ const Cart = () => {
           <div className='border border-gray-300 mt-5 w-96 p-5'>
             <div className='flex justify-between py-5'>
               <p>SubTotal</p>
-              <span className='text-red-600'>${total.toFixed(2)}</span> 
+              <span className='text-red-600'>₹ {total.toFixed(2)}</span> 
             </div>
             <hr className='text-gray-300' />
             <div className='py-5'>
@@ -88,27 +88,27 @@ const Cart = () => {
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
                     <label htmlFor="cart">Free Shipping</label>
                   </div>
-                  <span>+$00.00</span>
+                  <span>+₹00.00</span>
                 </div>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
                     <label htmlFor="cart">Flat Rate</label>
                   </div>
-                  <span>+$00.00</span>
+                  <span>+₹00.00</span>
                 </div>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
                     <label htmlFor="cart">Local Delivery</label>
                   </div>
-                  <span>+$00.00</span>
+                  <span>+₹00.00</span>
                 </div>
               </div>
             </div>
             <div className='flex justify-between py-5 text-2xl'>
               <p>Total</p>
-              <span className='text-red-600'>$365</span>
+              <span className='text-red-600'>₹365</span>
             </div>
             <div className='flex items-center'>
               {/* <NavLink> */}

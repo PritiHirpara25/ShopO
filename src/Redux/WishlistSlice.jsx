@@ -3,9 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const setWishlistDataToLocalStorage = (wishlistData) => {
     try {
         const data = JSON.stringify(wishlistData);
-        // if (!data) {
-        //     return undefined;
-        // }
         localStorage.setItem('wishlistData', data);
     } catch (error) {
         console.error("ERROR : ", error.message);
@@ -15,7 +12,7 @@ const setWishlistDataToLocalStorage = (wishlistData) => {
 const getWishlistDataFromLocalStorage = () => {
     try {
         const data = localStorage.getItem("wishlistData");
-        if(data === null){
+        if (data === null) {
             return undefined;
         }
         const retrivedata = JSON.parse(data);
@@ -39,11 +36,10 @@ const WishlistSlice = createSlice({
             setWishlistDataToLocalStorage(state);
         },
         removeToWishList: (state, action) => {
-            const removeData = state.filter((item) => item.id = action.payload.id);
+            const removeData = state.filter((item) => item.id !== action.payload);
             setWishlistDataToLocalStorage(removeData);
             return removeData;
         }
-
     }
 })
 
