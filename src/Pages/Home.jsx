@@ -6,7 +6,7 @@ import Footer from '../Component/Footer'
 
 const Home = () => {
   return (
-   <div className=' mt-8'>
+   <div className=''>
       <Templates />
       <Shipping />
       <Coupan />

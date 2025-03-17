@@ -5,12 +5,14 @@ import { removeToCart } from '../Redux/CartSlice';
 import { IoClose } from 'react-icons/io5';
 
 function CartHoverProduct({ product }) {
+
   const dispatch = useDispatch();
+
   return (
     <div className="flex gap-1 m-2">
 
       <div className="flex gap-4 py-2 ">
-        <div className="w-1/3">
+        <div className="w-1/2">
           <img src={product.image} alt="remote_image" className="size-16" />
         </div>
         <div className="flex flex-col gap-2">

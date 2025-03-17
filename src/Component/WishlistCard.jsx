@@ -15,7 +15,7 @@ const WishlistCard = ({ item }) => {
 
     return (
         <div>
-            <div className='relative max-w-80 h-96 p-7 shadow-xl group' key={item.id}>
+            <div className='relative max-w-80 h-96 p-7 shadow-xl group bg-white' key={item.id}>
                 <div className='relative'>
                     <IoClose className='absolute right-0 text-2xl cursor-pointer hover:text-red-600' onClick={() => dispatch(removeToWishList(item.id))} />
                     <div className='flex justify-center'>

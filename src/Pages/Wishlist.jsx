@@ -9,8 +9,8 @@ const Wishlist = () => {
   const wishlistData = useSelector(state => state.wishlist)
 
   return (
-    <div className="mt-10">
-      {wishlistData.length === 0 ? <NoWishlist /> : <div className='grid grid-cols-3 gap-x-8 gap-y-8 border '>{wishlistData.map((item) => {
+    <div className="pt-10 container mx-auto">
+      {wishlistData.length === 0 ? <NoWishlist /> : <div className='grid grid-cols-4 gap-x-20 gap-y-20 mx-auto'>{wishlistData.map((item) => {
         return (
           <WishlistCard key={item.id} item={item} />
         )

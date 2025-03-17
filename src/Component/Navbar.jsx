@@ -8,11 +8,11 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   return (
     <>
-      <div>
+      <div className=''>
         <PrimaryNavbar sidebar={sidebar} setSidebar={setSidebar} />
         <SecondryNavbar />
       </div>
-      <div>
+      <div className='bg-[#f8f8f8]'>
         <Outlet />
       </div>
     </>

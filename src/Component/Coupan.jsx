@@ -1,6 +1,5 @@
 import React from 'react'
 import coupn_banner from '../assets/coupn_banner.jpg'
-import blue_headphone from '../assets/blue_headphone.jpg'
 
 function Coupan() {
   return (

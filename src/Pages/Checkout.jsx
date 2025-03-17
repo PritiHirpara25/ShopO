@@ -21,7 +21,7 @@ const Checkout = () => {
         <p className='font-bold text-3xl my-20'>Checkout</p>
       </div>
 
-      <div className=''>
+      <div className='container mx-auto'>
 
         <div className='mt-5 flex justify-center'>
           <button className='bg-gray-200 py-3 px-20 cursor-pointer' onClick={() => navigate('/login')}>Log into Your Account</button>

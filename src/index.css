@@ -1,22 +1,41 @@
 @import "tailwindcss";
 
-@layer components{
-
-  .container{
-    @apply w-full max-w-4xl mx-auto py-4 box-border;
-  }
+@layer components {
 
   /* footer */
-  .footer_link{
-    @apply text-sm text-gray-400 transition-all duration-300 
+  .footer_link {
+    @apply text-sm text-gray-400 transition-all duration-300
   }
-  .footer_link:hover{
-    @apply text-black  border-black cursor-pointer 
+
+  .footer_link:hover {
+    @apply text-black border-black cursor-pointer
   }
 
   /* button */
-  .btn{
+  .btn {
     @apply bg-[#ffbb38] p-3 rounded-md cursor-pointer text-white font-bold text-lg hover:text-black
   }
-  
+
 }
+
+/* @theme {
+  .container-sm {
+    max-width: 640px;
+  }
+
+  .container-md {
+    max-width: 768px;
+  }
+
+  .container-lg {
+    max-width: 1024px;
+  }
+
+  .container-xl {
+    max-width: 1280px;
+  }
+
+  .container-2xl {
+    max-width: 1536px;
+  }
+} */

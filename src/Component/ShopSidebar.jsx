@@ -45,7 +45,7 @@ const ShopSidebar = () => {
     },[dispatch,checkedCategory])
 
     return (
-        <div className='shadow-2xl w-72 p-9'>
+        <div className='shadow-2xl w-72 p-9 bg-white'>
 
             {/* dynamic Product Category */}
             <div>

@@ -7,13 +7,13 @@ function Templates() {
   return (
     <div>
       {/* Templates */}
-      <div className='container  mt-6 flex justify-between'>
+      <div className='container mx-auto flex gap-14 pt-16'>
         <div>
-          <img src={samsung_phone} alt="samsung phone image" className='w-full h-full max-w-full '/>
+          <img src={samsung_phone} alt="samsung phone image" className='w-[950px] h-full max-w-full object-center '/>
         </div>
-        <div className='flex flex-col gap-4'>
-          <img src={apple_smartWatch} alt="smartwatch image" className='w-full h-auto ' />
-          <img src={gameXbox} alt="gamexbox image" className='w-full h-auto '/>
+        <div className='flex flex-col gap-14'>
+          <img src={apple_smartWatch} alt="smartwatch image" className='w-[500px] h-auto ' />
+          <img src={gameXbox} alt="gamexbox image" className='w-[500px] h-auto '/>
         </div>
       </div>
     </div>

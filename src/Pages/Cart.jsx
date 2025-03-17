@@ -18,7 +18,7 @@ const Cart = () => {
     <div >
 
       {/* Cart Heading */}
-      <div className='bg-[#fffaef] flex justify-center relative'>
+      <div className='bg-[#fffaef] flex justify-center relative '>
         <div className='absolute top-10 left-55'>
           <NavLink to='/'>Home</NavLink> / Cart
         </div>
@@ -26,9 +26,9 @@ const Cart = () => {
       </div>
 
       {/* Cart data in table form */}
-      <table className='mt-10'>
+      <table className='mt-10 container mx-auto'>
         <thead>
-          <tr className='bg-gray-200 text-sm m-8'>
+          <tr className='bg-gray-200 text-sm m-8 border-2 border-gray-300'>
             <th className='p-5'>PRODUCT</th>
             <th className='px-5'>COLOR</th>
             <th className='px-5'>SIZE</th>
@@ -43,7 +43,7 @@ const Cart = () => {
           {
             cartData.map((item) => {
               return (
-                <tr className='' key={item.id}>
+                <tr className='border-2 border-gray-300 hover:bg-gray-100' key={item.id}>
                   <td className='p-5 flex items-center gap-x-14'><img src={item.image} alt="" className='size-20 ' />{item.title}</td>
                   <td className='px-12'><p className='bg-[#e4bc87] p-2 rounded-full w-fit h-fit border border-gray-200'></p></td>
                   <td className='px-12'>{item.size}</td>
@@ -64,7 +64,7 @@ const Cart = () => {
         </tbody>
       </table>
 
-      <div className='flex justify-between'>
+      <div className='flex justify-between container mx-auto pt-10'>
         <div>
           <input type="text" placeholder='Discount Code' className='px-2 py-2.5 border border-gray-300 focus:outline-none rounded-none' />
           <button className='bg-black text-white px-6 py-2.5'>Apply</button>

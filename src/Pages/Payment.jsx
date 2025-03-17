@@ -15,7 +15,7 @@ const Payment = () => {
         <p className='font-bold text-3xl my-20'>Payment</p>
       </div>
 
-      <div className='mt-20 mb-20 flex gap-x-8'>
+      <div className='mt-20 mb-20 flex gap-x-8 container mx-auto'>
 
         <div className='w-3/5 '>
           <h1 className='font-semibold text-xl'>Payment Methods</h1>
