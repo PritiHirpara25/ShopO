@@ -18,6 +18,9 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
   const wishlistData = useSelector(state => state.wishlist);
   const navigate = useNavigate()
 
+   // total 
+   const total = cartData.reduce((sum,item)=> sum + item.price * item.quantity,0);
+
   return (
     <div className="bg-white">
       <div className="container mx-auto relative">
@@ -108,7 +111,7 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
                   {/* total price */}
                   <div className="flex justify-between mt-2">
                     <p className="font-medium">Subtotal</p>
-                    <p className="text-red-500 font-semibold">$365</p>
+                    <p className="text-red-500 font-semibold">${total.toFixed(2)}</p>
                   </div>
                   {/* button container */}
                   <div className="flex flex-col my-4 gap-2">

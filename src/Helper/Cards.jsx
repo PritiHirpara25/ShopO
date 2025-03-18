@@ -21,7 +21,7 @@ const Cards = ({ product }) => {
     const dispatch = useDispatch(); 
 
     return (    
-        <div className='relative max-w-80 h-96 p-7 shadow-xl group bg-white'>
+        <div className='relative max-w-96 h-96 p-7 shadow-xl group bg-white'>
 
             <div className='absolute top-12 right-8 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-5 group-hover:translate-x-0'>
                 <CiHeart className='m-2 bg-gray-200 font-bold text-4xl p-1' onClick={() => dispatch(addToWishList(product))} />

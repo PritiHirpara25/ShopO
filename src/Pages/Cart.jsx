@@ -9,6 +9,8 @@ import { removeToCart,incrementQuantity,decrementQuantity } from '../Redux/CartS
 
 const Cart = () => {
 
+  const [isShipping , setIsShipping] = useState(false);
+
   const navigate = useNavigate();
   const cartData = useSelector(state => state.cart);
   const dispatch = useDispatch();
@@ -95,20 +97,20 @@ const Cart = () => {
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
                     <label htmlFor="cart">Flat Rate</label>
                   </div>
-                  <span>+₹00.00</span>
+                  <span>+₹20.00</span>
                 </div>
                 <div className='py-2 flex justify-between'>
                   <div className='flex gap-x-2'>
                     <input type="radio" name='option' id='cart' className='cursor-pointer accent-pink-500' />
                     <label htmlFor="cart">Local Delivery</label>
                   </div>
-                  <span>+₹00.00</span>
+                  <span>+₹10.00</span>
                 </div>
               </div>
             </div>
             <div className='flex justify-between py-5 text-2xl'>
               <p>Total</p>
-              <span className='text-red-600'>₹365</span>
+              <span className='text-red-600'>₹ {total.toFixed(2)}</span>
             </div>
             <div className='flex items-center'>
               {/* <NavLink> */}

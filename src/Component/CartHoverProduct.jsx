@@ -16,8 +16,8 @@ function CartHoverProduct({ product }) {
           <img src={product.image} alt="remote_image" className="size-16" />
         </div>
         <div className="flex flex-col gap-2">
-          <p className="hover:text-blue-500 text-sm font-medium">iPhone 12 Pro Max 128 GB Golen Color</p>
-          <p className="text-red-500 font-semibold">₹38</p>
+          <p className="hover:text-blue-500 text-sm font-medium line-clamp-2 w-36">{product.title}</p>
+          <p className="text-red-500 font-semibold">₹{product.price * product.quantity}</p>
         </div>
       </div>
 

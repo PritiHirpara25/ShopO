@@ -19,8 +19,8 @@ const Shop = () => {
   return (
     <div>
 
-      <div className='container pt-10 mx-auto'>
-        <div className='flex '>
+      <div className='container pt-10 mx-auto '>
+        <div className='flex'>
           <div>
             <ShopSidebar />
           </div>
@@ -29,7 +29,7 @@ const Shop = () => {
             <div className="spinner"></div></div>}
 
           {/* products */}
-          <div className="grid grid-cols-3 gap-x-8 gap-y-8 mx-10">
+          <div className="grid grid-cols-3 gap-x-10 gap-y-8 mx-10">
             {status === "fulfilled" && filteredData.map((item) => (
               <div key={item.id}>
                 <Cards product={item} />
