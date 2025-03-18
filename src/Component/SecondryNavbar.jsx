@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 function SecondryNavbar() {
   const [toggleCategory, setToggleCategory] = useState(false);
   return (
-    <div className="bg-[#ffbb38]">
+    <div className="bg-[#ffbb38] hidden lg:block">
       <nav className="container mx-auto flex justify-between items-center h-14">
 
           <div></div>

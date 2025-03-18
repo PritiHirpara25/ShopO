@@ -23,7 +23,7 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
 
   return (
     <div className="bg-white">
-      <div className="container mx-auto relative">
+      <div className="container mx-auto relative px-4">
         {/* navbar */}
         <nav className="flex justify-between items-center h-20">
           {/* hamburger menu */}
@@ -155,4 +155,4 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
   );
 }
 
-export default PrimaryNavbar;
+export default PrimaryNavbar;

@@ -6,7 +6,7 @@ import shipping from '../assets/shipping.svg'
 
 function Shipping() {
   return (
-    <div className='container mx-auto flex justify-between px-8 bg-white p-8 text-2xl my-14'>
+    <div className='container mx-auto flex flex-col gap-8 sm:flex-row md:justify-between px-8 bg-white p-8  my-14'>
       {/* shipping */}
       <div className='flex gap-4 items-center'>
         <div>
