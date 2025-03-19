@@ -21,7 +21,7 @@ const Login = () => {
   }
 
   return (
-    <div className='py-44'>
+    <div className='py-10 md:py-14 lg:py-44'>
       <div className="max-w-md  mx-auto bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Login</h2>
 

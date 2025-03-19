@@ -2,38 +2,45 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Coupan from '../Component/Coupan'
 import Footer from '../Component/Footer'
+import { useSelector } from 'react-redux'
 
 const Payment = () => {
+
+  const cartData = useSelector(state => state.cart);
+
+  // total 
+  const total = cartData.reduce((sum, item) => sum + item.price , 0);
+
   return (
-    <div>
+    <div className=''>
 
       {/* Payment Heading */}
       <div className='bg-[#fffaef] flex justify-center relative'>
-        <div className='absolute top-10 left-55'>
+        <div className='absolute top-10 lg:left-55'>
           <NavLink to='/'>Home</NavLink> / Payment
         </div>
         <p className='font-bold text-3xl my-20'>Payment</p>
       </div>
 
-      <div className='mt-20 mb-20 flex gap-x-8 container mx-auto'>
+      <div className='mt-20 mb-20 flex flex-col lg:flex-row gap-x-8 container mx-auto'>
 
-        <div className='w-3/5 '>
-          <h1 className='font-semibold text-xl'>Payment Methods</h1>
-          <div className='shadow-md my-5 p-5'>
+        <div className='w-full'>
+          <h1 className='font-semibold text-xl pl-2'>Payment Methods</h1>
+          <div className='shadow-md my-5 md:p-5'>
             {/* UPI */}
             <div className='mx-2 '>
               <div className='flex space-x-2 '>
                   <input className='accent-pink-500' name='option' type="radio" />
-                  <label htmlFor="">UPI</label>
+                  <label>UPI</label>
               </div>
               <div className='mx-5'>
-                <label htmlFor="">please enter your UPI ID</label>
+                <label>please enter your UPI ID</label>
                 <div className='flex items-center gap-x-5 my-2'>
 
                   <input type="text" className='border border-gray-400 rounded-md focus:outline-none p-1 px-2' placeholder='UPI ID' />
                   <button className='bg-[#ffbb38] rounded-sm px-2 p-1 cursor-pointer'>verify</button>
                 </div>
-                <label htmlFor="">The UPI ID is in the format of name/phone number@bankname</label>
+                <label>The UPI ID is in the format of name/phone number@bankname</label>
               </div>
             </div>
             <hr className='text-gray-300 m-5' />
@@ -41,10 +48,10 @@ const Payment = () => {
             <div className='mx-2 my-5 '>
               <div className='space-x-2'>
                   <input className='accent-pink-500' name='option' type="radio" />
-                  <label htmlFor="">Bank Transfer</label>
+                  <label>Bank Transfer</label>
               </div>
               <div className='mx-5 my-2'>
-                <select name="" id="" className='border border-gray-400 rounded-sm w-72 p-1 focus:outline-none'>
+                <select name="" id="" className='border border-gray-400 rounded-sm md:w-72 p-1 focus:outline-none'>
                   <option value="">HDFC Bank</option>
                   <option value="">State Bank of India</option>
                   <option value="">ICICI Netbanking</option>
@@ -59,20 +66,20 @@ const Payment = () => {
             <div className='mx-2 my-5 '>
               <div className='space-x-2'>
                 <input type="radio" className='accent-pink-500' name='option' />
-                <label htmlFor="">Credit / Debit / ATM Card</label>
+                <label>Credit / Debit / ATM Card</label>
               </div>
               <div className='mx-5'>
                 <div className='my-1'>
-                  <label htmlFor="">Card Number</label><br />
-                  <input type="number" placeholder='xxxx xxxx xxxx' className='border border-gray-400 rounded-md focus:outline-none p-1 px-2 w-72 my-2' />
+                  <label>Card Number</label><br />
+                  <input type="number" placeholder='xxxx xxxx xxxx' className='border border-gray-400 rounded-md focus:outline-none p-1 px-2 my-2' />
                 </div>
-                <div className='flex gap-x-4 my-2'>
+                <div className='flex flex-col md:flex-row gap-x-4 my-2'>
                   <div className=''>
-                    <label htmlFor="">Valid Thru</label><br />
+                    <label>Valid Thru</label><br />
                     <input type="text" placeholder='MM/YY' className='border border-gray-400 rounded-md focus:outline-none p-1 px-2 my-2' />
                   </div>
                   <div className=''>
-                    <label htmlFor="">CVV</label><br />
+                    <label>CVV</label><br />
                     <input type="text" placeholder='CVV' className='border border-gray-400 rounded-md focus:outline-none p-1 px-2 my-2' />
                   </div>
                 </div>
@@ -81,14 +88,14 @@ const Payment = () => {
             </div>
             <hr className='text-gray-300 m-5' />
             {/* Cash On Delivery */}
-            <div className='mx-2 space-x-2 my-5 '>
+            <div className='mx-2 space-x-2 my-5 pb-5 '>
               <input className='accent-pink-500' name='option' type="radio" />
-              <label htmlFor="">Cash on Delivery / Pay on Delivery</label>
+              <label>Cash on Delivery / Pay on Delivery</label>
             </div>
           </div>
         </div>
 
-        <div className='shadow-md px-8 w-2/5 mt-12 h-fit'>
+        <div className='shadow-md px-8 w-full mt-12 h-fit'>
           <div className='text-gray-400 my-5'>
             PRICE DETAILS
           </div>
@@ -96,7 +103,7 @@ const Payment = () => {
           <div className='space-y-5'>
             <div className='flex justify-between'>
               <p>Price</p>
-              <span>$55</span>
+              <span>${total.toFixed(2)}</span>
             </div>
             <div className='flex justify-between'>
               <p>Delivery Charges</p>
@@ -110,7 +117,7 @@ const Payment = () => {
           <hr className='text-gray-300 m-5' />
           <div className='flex justify-between font-semibold text-xl my-7'>
             <p>Total</p>
-            <span className='text-red-600'>$125</span>
+            <span className='text-red-600'>${total + 3 + 0.5}</span>
           </div>
           <div>
             <button className='bg-black text-white w-full mb-10 py-2'>Pay</button>

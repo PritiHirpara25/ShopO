@@ -10,7 +10,7 @@ const Wishlist = () => {
 
   return (
     <div className="pt-10 container mx-auto">
-      {wishlistData.length === 0 ? <NoWishlist /> : <div className='grid grid-cols-4 gap-x-20 gap-y-20 mx-auto'>{wishlistData.map((item) => {
+      {wishlistData.length === 0 ? <NoWishlist /> : <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-20 mx-auto px-5'>{wishlistData.map((item) => {
         return (
           <WishlistCard key={item.id} item={item} />
         )

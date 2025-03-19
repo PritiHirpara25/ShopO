@@ -25,7 +25,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className='py-16'>
+    <div className='py-6'>
       <div className="max-w-md mx-auto  bg-white p-6 rounded-lg shadow-md ">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Sign Up</h2>
 

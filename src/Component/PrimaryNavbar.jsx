@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import { IoBagOutline } from "react-icons/io5";
+import { CiShoppingCart } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { GoPerson } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -18,8 +18,8 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
   const wishlistData = useSelector(state => state.wishlist);
   const navigate = useNavigate()
 
-   // total 
-   const total = cartData.reduce((sum,item)=> sum + item.price * item.quantity,0);
+  // total 
+  const total = cartData.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
     <div className="bg-white">
@@ -72,9 +72,9 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
             <div className="group">
               <div className="relative">
                 <NavLink to={"/cart"}>
-                  <IoBagOutline className="size-5 mt-1" />
+                  <CiShoppingCart className="size-6 mt-1" />
                 </NavLink>
-                <div className="size-5 rounded-full flex justify-center items-center font-semibold bg-[#ffbb38] absolute bottom-3 left-2">
+                <div className="size-4 rounded-full flex justify-center items-center font-semibold bg-[#ffbb38] absolute bottom-3 left-3">
                   <span className="font-light">{cartData.length}</span>
                 </div>
               </div>
@@ -143,16 +143,16 @@ function PrimaryNavbar({ sidebar, setSidebar }) {
           {sidebar && <Sidebar sidebar={sidebar} setSidebar={setSidebar} />}
         </div>
 
-        {sidebar && (
+        {/* {sidebar && (
           <div
             className={`fixed inset-0 bg-black ${sidebar ? "opacity-50" : "opacity-0"
               } transition-opacity duration-300 linear z-40 lg:hidden`}
             onClick={() => setSidebar(false)}
           ></div>
-        )}
+        )} */}
       </div>
     </div>
   );
 }
 
-export default PrimaryNavbar;
+export default PrimaryNavbar;
