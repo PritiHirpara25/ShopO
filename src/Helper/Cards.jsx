@@ -9,16 +9,18 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Redux/CartSlice';
 import { addToWishList } from '../Redux/WishlistSlice';
+import { add_Products } from '../Redux/ProductDetailsSlice';
 
 const Cards = ({ product }) => {
 
     const navigate = useNavigate();
 
-    const handleTitleClick = () => {
-        navigate(`/product/${product.id}`);
-    }
-
     const dispatch = useDispatch();
+
+    const handleTitleClick = (product) => {
+        navigate(`/product/${product.id}`);
+        dispatch(add_Products(product));
+    }
 
     return (
         <div className='relative max-w-96 h-96 p-7 shadow-xl group bg-white'>
@@ -40,7 +42,7 @@ const Cards = ({ product }) => {
                     <MdOutlineStarPurple500 className='text-[#ffbb38] text-xl' />
                 </div>
                 <div>
-                    <p className='line-clamp-2 mb-2 hover:text-blue-600 hover:cursor-pointer' onClick={handleTitleClick}>{product.title}</p>
+                    <p className='line-clamp-2 mb-2 hover:text-blue-600 hover:cursor-pointer' onClick={() => handleTitleClick(product)}>{product.title}</p>
                     <div className='flex gap-x-2'>
                         {/* <del className='text-xl text-gray-400'>{product.discount}</del> */}
                         <span className='text-xl text-red-600 font-bold'>₹ {product.price}</span>
