@@ -31,7 +31,7 @@ const Cards = ({ product }) => {
         <div className='relative max-w-96 h-96 p-7 shadow-xl group bg-white'>
 
             {/* hover icons */}
-            <div className='absolute top-12 right-4 sm:right-8 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-5 group-hover:translate-x-0'>
+            <div className='absolute top-12 right-8 z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-5 group-hover:translate-x-0'>
                 <CiHeart className='m-2 bg-gray-200 font-bold text-4xl p-1' onClick={() => dispatch(addToWishList(product))} />
                 <LuRefreshCcw className='m-2 bg-gray-200 font-bold text-4xl p-1' />
                 <AiOutlineFullscreen className='m-2 bg-gray-200 font-bold text-4xl p-1' />
@@ -59,8 +59,8 @@ const Cards = ({ product }) => {
             </div>
 
             {/* hover add to cart button */}
-            <div className="absolute bottom-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300  translate-y-5 group-hover:translate-y-0">
-                <button className="flex items-center gap-x-3 bg-[#ffbb38] px-18 md:px-20 lg:px-16 xl:px-28 py-2 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
+            <div className="absolute bottom-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300  translate-y-5 group-hover:translate-y-0">
+                <button className="flex items-center gap-x-3 bg-[#ffbb38] px-9 sm:px-20 lg:px-22 xl:px-24 text-nowrap py-2 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
                     <HiOutlineShoppingBag /> Add To Cart
                 </button>
             </div>
