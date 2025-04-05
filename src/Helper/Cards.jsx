@@ -60,7 +60,7 @@ const Cards = ({ product }) => {
 
             {/* hover add to cart button */}
             <div className="absolute bottom-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300  translate-y-5 group-hover:translate-y-0">
-                <button className="flex items-center gap-x-3 bg-[#ffbb38] px-9 sm:px-20 lg:px-22 xl:px-24 text-nowrap py-2 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
+                <button className="flex items-center gap-x-3 bg-[#ffbb38] px-9 sm:px-20 lg:px-22 xl:px-20 text-nowrap py-2 cursor-pointer" onClick={() => dispatch(addToCart(product))}>
                     <HiOutlineShoppingBag /> Add To Cart
                 </button>
             </div>
