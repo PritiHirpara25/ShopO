@@ -1,11 +1,9 @@
-import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import productdetails1 from '../assets/product-details-1.png'
 import Coupan from '../Component/Coupan'
 import Footer from '../Component/Footer'
-import ProductDetailsCard from '../Component/ProductDetailsCard'
-import { useSelector } from 'react-redux'
 import ProductDescription from '../Component/ProductDescription'
+import ProductDetailsCard from '../Component/ProductDetailsCard'
 
 const ProductDeatils = () => {
 
@@ -27,7 +25,7 @@ const ProductDeatils = () => {
 
         {/* Description */}
         <div>
-          <ProductDescription item={ProductDetailsData}/>
+          <ProductDescription item={ProductDetailsData} />
         </div>
 
       </div>

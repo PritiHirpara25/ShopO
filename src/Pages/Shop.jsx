@@ -25,7 +25,7 @@ const Shop = () => {
       <div className='container pt-10 mx-auto'>
         <div className='flex flex-col gap-2 md:flex-row'>
           <div className='hidden lg:block'>
-             <ShopSidebar/>
+            <ShopSidebar />
           </div>
 
           {/* loader */}

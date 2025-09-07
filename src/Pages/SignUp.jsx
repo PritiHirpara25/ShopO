@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const SignUp = () => {
 
-  const[issignupData , setIsSignupData] = useState({
-    firstname:"",
-    lastname:"",
-    email:"",
-    password:"",
-    confirmpassword:"",
-    gender:"",
-    city:"",
-    state:""
+  const [issignupData, setIsSignupData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmpassword: "",
+    gender: "",
+    city: "",
+    state: ""
   })
 
   const handleInputChange = (e) => {
-    const {name , value} = e.target;
-    setIsSignupData((prev) => ({...prev,[name]:value}))
+    const { name, value } = e.target;
+    setIsSignupData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = (e) => {

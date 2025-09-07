@@ -1,4 +1,3 @@
-import React from 'react'
 import quality from '../assets/quality.svg'
 import return_icon from '../assets/return_icon.svg'
 import secure from '../assets/secure.svg'
@@ -18,8 +17,8 @@ function Shipping() {
         </div>
       </div>
 
-        {/* return */}
-        <div className='flex gap-4 items-center'>
+      {/* return */}
+      <div className='flex gap-4 items-center'>
         <div>
           <img src={return_icon} alt="" />
         </div>
@@ -29,8 +28,8 @@ function Shipping() {
         </div>
       </div>
 
-        {/* secure */}
-        <div className='flex gap-4 items-center'>
+      {/* secure */}
+      <div className='flex gap-4 items-center'>
         <div>
           <img src={secure} alt="" />
         </div>
@@ -40,8 +39,8 @@ function Shipping() {
         </div>
       </div>
 
-        {/* quality */}
-        <div className='flex gap-4 items-center'>
+      {/* quality */}
+      <div className='flex gap-4 items-center'>
         <div>
           <img src={quality} alt="" />
         </div>

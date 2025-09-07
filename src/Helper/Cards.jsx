@@ -1,15 +1,13 @@
-import React from 'react'
-import GameRemote from '../assets/GameRemote.jpg'
-import { MdOutlineStarPurple500 } from "react-icons/md";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { CiHeart } from "react-icons/ci";
-import { LuRefreshCcw } from "react-icons/lu";
 import { AiOutlineFullscreen } from "react-icons/ai";
-import { useNavigate } from 'react-router-dom';
+import { CiHeart } from "react-icons/ci";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { LuRefreshCcw } from "react-icons/lu";
+import { MdOutlineStarPurple500 } from "react-icons/md";
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../Redux/CartSlice';
-import { addToWishList } from '../Redux/WishlistSlice';
 import { add_Products } from '../Redux/ProductDetailsSlice';
+import { addToWishList } from '../Redux/WishlistSlice';
 
 const Cards = ({ product }) => {
 

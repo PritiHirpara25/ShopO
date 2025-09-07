@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import productdetails1 from '../assets/product-details-1.png'
-import { MdOutlineStarPurple500 } from 'react-icons/md'
-import { HiMiniMinusSmall, HiPlusSmall } from "react-icons/hi2";
+import { useState } from 'react';
 import { BsHeart } from "react-icons/bs";
-import { IoIosFlag } from "react-icons/io";
-import { GrFacebookOption } from "react-icons/gr";
 import { FaPinterest } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
+import { GrFacebookOption } from "react-icons/gr";
+import { HiMiniMinusSmall, HiPlusSmall } from "react-icons/hi2";
+import { IoIosFlag } from "react-icons/io";
+import { MdOutlineStarPurple500 } from 'react-icons/md';
+import productdetails1 from '../assets/product-details-1.png';
 
 
 const ProductDetailsCard = ({ item }) => {
@@ -53,7 +53,7 @@ const ProductDetailsCard = ({ item }) => {
           <div className='flex mb-2'>
             {
               ratingStar.map((item) => {
-                return(
+                return (
                   item
                 )
               })
@@ -115,7 +115,7 @@ const ProductDetailsCard = ({ item }) => {
           </div>
         </div>
 
-        
+
 
       </div>
     </div>

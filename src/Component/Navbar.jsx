@@ -1,8 +1,7 @@
-import React from 'react'
-import PrimaryNavbar from './PrimaryNavbar'
-import SecondryNavbar from './SecondryNavbar'
-import { Outlet } from 'react-router-dom'
-import { useState } from 'react'
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import PrimaryNavbar from './PrimaryNavbar';
+import SecondryNavbar from './SecondryNavbar';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -12,7 +11,7 @@ function Navbar() {
         <PrimaryNavbar sidebar={sidebar} setSidebar={setSidebar} />
         <SecondryNavbar />
       </div>
-      <div className='bg-[#f8f8f8]'>
+      <div>
         <Outlet />
       </div>
     </>

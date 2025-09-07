@@ -1,8 +1,7 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
 import { FiPlus } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
 import { filterProduct } from '../Redux/ProductSlice';
-import { useState, useEffect } from 'react';
 
 const ShopSidebar = () => {
     const [checkedCategory, setCheckedcategory] = useState([]);

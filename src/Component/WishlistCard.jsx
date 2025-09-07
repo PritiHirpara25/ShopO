@@ -1,9 +1,8 @@
-import React from 'react'
-import { MdOutlineStarPurple500 } from 'react-icons/md'
 import { IoClose } from "react-icons/io5";
-import { removeToWishList } from '../Redux/WishlistSlice';
+import { MdOutlineStarPurple500 } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { removeToWishList } from '../Redux/WishlistSlice';
 
 const WishlistCard = ({ item }) => {
 
@@ -31,7 +30,7 @@ const WishlistCard = ({ item }) => {
                         </div>
                         <div>
                             <p className='line-clamp-2 mb-2 hover:text-blue-600 hover:cursor-pointer'
-                            onClick={handleTitleClick}
+                                onClick={handleTitleClick}
                             >{item.title}</p>
                             <div className='flex gap-x-2'>
                                 <span className='text-xl text-red-600 font-bold'>₹ {item.price}</span>

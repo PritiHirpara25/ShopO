@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
 
-  const [isloginData , setIsLoginData] = useState({
-    email:"",
-    password:"",
-    confirmpassword:""
+  const [isloginData, setIsLoginData] = useState({
+    email: "",
+    password: "",
+    confirmpassword: ""
   });
   // console.log(isloginData)
 
   const handleInputChange = (e) => {
-      const {name , value} = e.target;
-      setIsLoginData((prev) => ({...prev,[name]: value}))
+    const { name, value } = e.target;
+    setIsLoginData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(isloginData);
   }

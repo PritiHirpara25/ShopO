@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { HiMiniMinusSmall, HiPlusSmall } from 'react-icons/hi2';
 import { IoClose } from "react-icons/io5";
-import { NavLink, useNavigate } from 'react-router-dom';
-import Footer from '../Component/Footer';
-import Coupan from '../Component/Coupan';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeToCart, incrementQuantity, decrementQuantity } from '../Redux/CartSlice';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Coupan from '../Component/Coupan';
+import Footer from '../Component/Footer';
+import { decrementQuantity, incrementQuantity, removeToCart } from '../Redux/CartSlice';
 
 const Cart = () => {
 
@@ -17,7 +17,7 @@ const Cart = () => {
   // total 
   const total = cartData.reduce((sum, item) => sum + item.price * item.quantity, 0);
   return (
-    <div className='border'>
+    <div>
 
       {/* Cart Heading */}
       <div className='bg-[#fffaef] flex justify-center relative '>
@@ -69,7 +69,7 @@ const Cart = () => {
       </div>
 
       <div className='flex flex-col sm:flex-row justify-between container mx-auto pt-10 px-5'>
-        
+
         <div className='flex sm:block'>
           <input type="text" placeholder='Discount Code' className='px-2 py-2.5 border border-gray-300 focus:outline-none rounded-none' />
           <button className='bg-black text-white px-6 py-2.5'>Apply</button>

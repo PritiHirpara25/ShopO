@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { MdChevronRight } from "react-icons/md";
 import { NavLink } from "react-router-dom";
@@ -9,7 +8,7 @@ function SecondryNavbar() {
     <div className="bg-[#ffbb38] hidden lg:block">
       <nav className="container mx-auto flex justify-between items-center h-14">
 
-          <div></div>
+        <div></div>
 
         {/* nav-link container */}
         <div>

@@ -1,8 +1,7 @@
-import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Coupan from '../Component/Coupan';
 import Footer from '../Component/Footer';
-import { useSelector } from 'react-redux';
 
 const Checkout = () => {
 
@@ -11,7 +10,7 @@ const Checkout = () => {
   const cartData = useSelector(state => state.cart);
 
   // total 
-  const total = cartData.reduce((sum, item) => sum + item.price , 0);
+  const total = cartData.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div>

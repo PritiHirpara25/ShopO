@@ -18,8 +18,8 @@ const setDataToLocalStorage = (data) => {
 const getDataFromLocalStorage = () => {
     try {
         const storageData = localStorage.getItem('localData');
-        if(storageData === null){
-            return undefined;   
+        if (storageData === null) {
+            return undefined;
         }
         const retriveData = JSON.parse(storageData);
         return retriveData;

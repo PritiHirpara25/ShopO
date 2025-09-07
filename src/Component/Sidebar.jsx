@@ -1,13 +1,12 @@
-import React from "react";
 import { CiHeart } from "react-icons/ci";
-import { RxCross1 } from "react-icons/rx";
 import { FaSearch } from "react-icons/fa";
-import ShopSidebar from "./ShopSidebar";
-import { useSelector } from "react-redux";
 import { GoHome } from "react-icons/go";
-import { IoBagOutline } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 import { IoIosLogIn } from "react-icons/io";
+import { IoBagOutline } from "react-icons/io5";
+import { RxCross1 } from "react-icons/rx";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import ShopSidebar from "./ShopSidebar";
 
 function Sidebar({ sidebar, setSidebar }) {
 
@@ -22,7 +21,7 @@ function Sidebar({ sidebar, setSidebar }) {
         <div className="flex gap-3">
           {/* heart */}
           <div className="relative">
-            <CiHeart className="size-6" onClick={() => navigate('/wishlist')}/>
+            <CiHeart className="size-6" onClick={() => navigate('/wishlist')} />
             <div className="size-5 rounded-full flex justify-center items-center font-semibold bg-[#ffbb38] absolute bottom-3 left-3">
               <span className="font-light">{wishlistData.length}</span>
             </div>

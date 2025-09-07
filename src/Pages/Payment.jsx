@@ -1,15 +1,14 @@
-import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import Coupan from '../Component/Coupan'
 import Footer from '../Component/Footer'
-import { useSelector } from 'react-redux'
 
 const Payment = () => {
 
   const cartData = useSelector(state => state.cart);
 
   // total 
-  const total = cartData.reduce((sum, item) => sum + item.price , 0);
+  const total = cartData.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div className=''>
@@ -30,8 +29,8 @@ const Payment = () => {
             {/* UPI */}
             <div className='mx-2 '>
               <div className='flex space-x-2 '>
-                  <input className='accent-pink-500' name='option' type="radio" />
-                  <label>UPI</label>
+                <input className='accent-pink-500' name='option' type="radio" />
+                <label>UPI</label>
               </div>
               <div className='mx-5'>
                 <label>please enter your UPI ID</label>
@@ -47,8 +46,8 @@ const Payment = () => {
             {/* direct bank transfer */}
             <div className='mx-2 my-5 '>
               <div className='space-x-2'>
-                  <input className='accent-pink-500' name='option' type="radio" />
-                  <label>Bank Transfer</label>
+                <input className='accent-pink-500' name='option' type="radio" />
+                <label>Bank Transfer</label>
               </div>
               <div className='mx-5 my-2'>
                 <select name="" id="" className='border border-gray-400 rounded-sm md:w-72 p-1 focus:outline-none'>

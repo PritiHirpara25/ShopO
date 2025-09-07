@@ -1,7 +1,5 @@
-import React from 'react'
-import { MdOutlineStarPurple500 } from 'react-icons/md'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import WishlistCard from '../Component/WishlistCard';
 
 const Wishlist = () => {
@@ -26,8 +24,8 @@ const NoWishlist = () => {
 
   return (
     <div className='h-screen flex flex-col justify-center items-center gap-3'>
-        <p className='text-2xl'>No Product Available</p>
-        <button onClick={() => navigate('/shop')} className='btn'>Go to Shop</button>
+      <p className='text-2xl'>No Product Available</p>
+      <button onClick={() => navigate('/shop')} className='btn'>Go to Shop</button>
     </div>
   )
 }

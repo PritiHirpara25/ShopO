@@ -1,16 +1,11 @@
-import React from "react";
-import logo from "../assets/logo.svg";
-import { CiShoppingCart } from "react-icons/ci";
-import { CiHeart } from "react-icons/ci";
+import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { GoPerson } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Sidebar from "./Sidebar";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import CartHoverProduct from "./CartHoverProduct";
-import game_remote from "../assets/GameRemote.jpg";
-import { Scrollbar } from 'react-scrollbars-custom';
 import { useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.svg";
+import CartHoverProduct from "./CartHoverProduct";
+import Sidebar from "./Sidebar";
 
 function PrimaryNavbar({ sidebar, setSidebar }) {
 

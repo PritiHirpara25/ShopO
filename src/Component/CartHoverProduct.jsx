@@ -1,12 +1,6 @@
-import React from 'react'
-import game_remote from "../assets/GameRemote.jpg";
-import { useDispatch } from 'react-redux';
-import { removeToCart } from '../Redux/CartSlice';
 import { IoClose } from 'react-icons/io5';
 
 function CartHoverProduct({ product }) {
-
-  const dispatch = useDispatch();
 
   return (
     <div className="flex gap-1 m-2">
